@@ -6,21 +6,19 @@ import "./App.css";
 
 function App() {
   return (
-    <>
-      <Router>
-        <div className="App">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route
-              path="/saved-news"
-              element={<div>Saved News Page - Coming Soon!</div>}
-            />
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
-    </>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route
+            path="/saved-news"
+            element={<div>Saved News Page - Coming Soon!</div>}
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
