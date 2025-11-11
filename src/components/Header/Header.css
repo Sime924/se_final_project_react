@@ -1,3 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  background-image: url("../../assets/Header_image.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 1440px;
+  height: 576px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  height: 80px;
+  border-bottom: 1px solid gray;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.header__user-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-right: 104px;
+  margin-bottom: 13px;
+}
+
 .header__logo {
-  color: aqua;
+  width: 190px;
+  height: 20px;
+  margin-top: 30px;
+  margin-left: 104px;
+}
+
+.header__home-btn {
+  margin-right: 42px;
+  background: transparent;
+  border: none;
+  width: 49px;
+  height: 24px;
+  font-size: 18px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.header__signin-btn {
+  width: 176px;
+  height: 48px;
+  background: transparent;
+  border-radius: 100px;
+  color: #ffffff;
+  border-color: #ffffff;
+  border: 1px solid;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.header__title {
+  color: #ffffff;
+  max-width: 608px;
+  font-size: 60px;
+  font-family: "Roboto-slab", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 64px;
+}
+
+.header__subtitle {
+  color: #ffffff;
+  width: 608px;
+  height: 24px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 32px;
+}
+
+.header__search-form {
+  border: none;
+  margin-top: 88px;
+}
+
+.header__search-form_fieldset {
+  border-radius: 100px;
+  width: 608px;
+  height: 63px;
+  background-color: #ffffff;
+  border: none;
+}
+
+.header__search-btn {
+  width: 168px;
+  height: 63px;
+  border-radius: 100px;
+  background-color: #2f71e5;
+  color: #ffffff;
+  border: none;
+  font-size: 18px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.header__input-form {
+  border: none;
+  border-radius: 100px;
+  margin-left: 24px;
+  margin-right: 40px;
+  width: 376px;
+  height: 30px;
+}
+
+.header__input-form:focus {
+  outline: none;
 }
