@@ -59,6 +59,10 @@ body {
   color: #ffffff;
 }
 
+.header__home-btn:hover {
+  border-bottom: 2px solid #fff;
+}
+
 .header__signin-btn {
   width: 176px;
   height: 48px;
