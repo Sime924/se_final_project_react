@@ -48,11 +48,12 @@ body {
 }
 
 .header__home-btn {
+  position: relative;
   margin-right: 42px;
   background: transparent;
   border: none;
-  width: 49px;
-  height: 24px;
+  width: auto;
+  height: auto;
   font-size: 18px;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -60,8 +61,21 @@ body {
   color: #ffffff;
 }
 
-.header__home-btn:hover {
-  border-bottom: 2px solid #fff;
+.header__home-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%) scaleX(0);
+  width: 70px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: 0.2s ease;
+}
+
+.header__home-btn:hover::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 .header__signin-btn {
