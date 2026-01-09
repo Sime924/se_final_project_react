@@ -8,6 +8,17 @@ function Footer() {
           {" "}
           &copy; 2025 Supersite, Powered by News API
         </p>
+        <div className="footer__links">
+          <button className="footer__btn">Home</button>
+          <a
+            className="footer__triple-ten"
+            href="https://tripleten.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TripleTen
+          </a>
+        </div>
       </div>
     </footer>
   );
