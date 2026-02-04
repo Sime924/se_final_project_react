@@ -1,14 +1,16 @@
 import "./Header.css";
 import logo from "../../assets/logo.svg";
 
-function Header() {
+function Header(handleShowLoginModal) {
   return (
     <header className="header">
       <div className="header__container">
         <img src={logo} alt="Header-Logo" className="header__logo" />
         <div className="header__user-container">
           <button className="header__home-btn">Home</button>
-          <button className="header__signin-btn">Sign in</button>
+          <button className="header__signin-btn" onClick={handleShowLoginModal}>
+            Sign in
+          </button>
         </div>
       </div>
       <div className="header__content">
