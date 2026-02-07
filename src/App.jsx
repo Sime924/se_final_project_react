@@ -5,9 +5,11 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
-// finish login modal  create close active modal
-
 import LoginModal from "./components/LoginModal/LoginModal";
+
+// style login modal
+//create register modal structure
+// style register modal
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -23,7 +25,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Header handleShowLoginModal={handleOpenLoginModal} />
+        <Header handleOpenLoginModal={handleOpenLoginModal} />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route
