@@ -58,6 +58,7 @@ function App() {
           <LoginModal
             isOpen={showLoginModal}
             onClose={handleCloseActiveModal}
+            onSwitchToRegister={handleOnSwitchToRegister}
           />
         )}
 
@@ -65,6 +66,7 @@ function App() {
           <RegisterModal
             isOpen={showRegisterModal}
             onClose={handleCloseActiveModal}
+            handleOnSwitchToLogin={handleOnSwitchToLogin}
           />
         )}
       </div>

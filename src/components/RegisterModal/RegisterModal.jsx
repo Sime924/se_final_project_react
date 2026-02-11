@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./RegisterModal.css";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function RegisterModal() {
+function RegisterModal({ isOpen, onClose, handleOnSwitchToLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -33,7 +34,7 @@ function RegisterModal() {
         <button
           type="button"
           className="Signin__Modal-switch-btn"
-          onClick={onSwitchToLogin}
+          onClick={handleOnSwitchToLogin}
         >
           or sign in
         </button>
@@ -66,6 +67,20 @@ function RegisterModal() {
           value={password}
           pattern="(?=.*[a-z])(?=.*[A-Z](?=.*[^A-Za-z0-9]).*"
           title="Must contain at least 1 uppercase letter, 1 lowercase letter, and 1 special character"
+        />
+      </label>
+      <label className="modal__label-username">
+        Username{" "}
+        <input
+          type="text"
+          className="modal__input"
+          id="modal__signup-username"
+          placeholder="enter a Username"
+          required
+          minLength={6}
+          maxLength={12}
+          value={username}
+          onChange={handleUsernameChange}
         />
       </label>
     </ModalWithForm>
