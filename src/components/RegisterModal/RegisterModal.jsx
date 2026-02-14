@@ -33,7 +33,7 @@ function RegisterModal({ isOpen, onClose, handleOnSwitchToLogin }) {
       switchButton={
         <button
           type="button"
-          className="Signup__modal-switch-btn"
+          className="signup__modal-switch-btn"
           onClick={handleOnSwitchToLogin}
         >
           or <span className="signup__modal-switch-txt">Sign in</span>
