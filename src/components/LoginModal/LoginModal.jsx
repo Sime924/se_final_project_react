@@ -29,10 +29,11 @@ function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
       switchButton={
         <button
           type="button"
-          className="Signin__Modal-switch-btn"
+          className="signin__modal-switch-btn"
           onClick={onSwitchToRegister}
         >
-          or sign up
+          {" "}
+          or <span className="signin__btn-switch-txt">Sign Up</span>
         </button>
       }
     >
