@@ -4,10 +4,21 @@ import "./LoginModal.css";
 
 function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+    const value = e.target.value;
+    setEmail(value);
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!value) {
+      setEmailError("");
+    } else if (!emailRegex.test(value)) {
+      setEmailError("Invalid email address");
+    } else {
+      setEmailError("");
+    }
   };
 
   const handlePasswordChange = (e) => {
@@ -37,7 +48,7 @@ function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
         </button>
       }
     >
-      <label className="modal__label-signin">
+      <label className="modal__label-signin-email">
         Email{" "}
         <input
           type="email"
@@ -50,8 +61,9 @@ function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
           onChange={handleEmailChange}
           value={email}
         />
+        {emailError && <p className="modal__signin_error-text">{emailError}</p>}
       </label>
-      <label className="modal__label-signin">
+      <label className="modal__label-signin-password">
         Password{" "}
         <input
           type="password"

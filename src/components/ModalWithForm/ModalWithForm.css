@@ -69,6 +69,10 @@
   margin: 8px 0 24px;
 }
 
+.modal__input:focus {
+  outline: none;
+}
+
 .modal__radio-buttons {
   border: none;
   padding: 0;

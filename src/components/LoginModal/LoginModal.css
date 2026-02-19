@@ -17,3 +17,20 @@
 .signin__btn-switch-txt:hover {
   border-bottom: 1px solid #2f71e5;
 }
+
+.modal__label-signin-email {
+  margin-bottom: 13px;
+}
+
+#modal__signin-email {
+  margin-bottom: 3px;
+}
+
+.modal__signin_error-text {
+  width: 173px;
+  height: 14px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #ff0000;
+}
