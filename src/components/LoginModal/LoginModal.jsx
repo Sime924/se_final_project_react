@@ -30,6 +30,8 @@ function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
     handleSignIn({ email, password });
   };
 
+  const isFormValid = Boolean(email && password && !emailError);
+
   return (
     <ModalWithForm
       title="Sign in"
@@ -37,6 +39,7 @@ function LoginModal({ isOpen, onClose, handleSignIn, onSwitchToRegister }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleLoginModalSubmit}
+      isSubmitDisabled={!isFormValid}
       switchButton={
         <button
           type="button"

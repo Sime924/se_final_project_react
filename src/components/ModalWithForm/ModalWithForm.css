@@ -103,6 +103,11 @@
   opacity: 1;
 }
 
+.modal__submit:disabled {
+  color: #b6bcbf;
+  background-color: #e6e8eb;
+}
+
 .modal__buttons {
   display: flex;
   flex-direction: column;

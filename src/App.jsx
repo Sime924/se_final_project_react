@@ -7,15 +7,14 @@ import "./App.css";
 
 import LoginModal from "./components/LoginModal/LoginModal";
 import RegisterModal from "./components/RegisterModal/RegisterModal";
-
-// style login modal
-//create register modal structure
-// style register modal
+import RegistrationCompleteModal from "./components/RegistrationCompleteModal/RegistrationCompleteModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [showRegistrationCompleteModal, setShowRegistrationCompleteModal] =
+    useState(false);
 
   const handleOnSwitchToLogin = () => {
     setShowLoginModal(true);
@@ -35,9 +34,14 @@ function App() {
     setShowRegisterModal(true);
   };
 
+  const handleOpenRegistrationCompleteModal = () => {
+    setShowRegistrationCompleteModal(true);
+  };
+
   const handleCloseActiveModal = () => {
     setShowLoginModal(false);
     setShowRegisterModal(false);
+    setShowRegistrationCompleteModal;
   };
   return (
     <Router>
@@ -67,6 +71,13 @@ function App() {
             isOpen={showRegisterModal}
             onClose={handleCloseActiveModal}
             handleOnSwitchToLogin={handleOnSwitchToLogin}
+          />
+        )}
+
+        {showRegistrationCompleteModal && (
+          <RegistrationCompleteModal
+            isOpen={showRegistrationCompleteModal}
+            onClose={handleCloseActiveModal}
           />
         )}
       </div>

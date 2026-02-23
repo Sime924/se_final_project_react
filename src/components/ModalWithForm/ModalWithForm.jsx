@@ -8,6 +8,7 @@ function ModalWithForm({
   children,
   buttonText,
   switchButton,
+  isSubmitDisabled,
 }) {
   return (
     <div
@@ -24,10 +25,14 @@ function ModalWithForm({
         >
           {" "}
         </button>
-        <form onSubmit={onSubmit} className="modal__form">
+        <form onSubmit={onSubmit} noValidate className="modal__form">
           {children}
           <div className="modal__buttons">
-            <button type="submit" className="modal__submit">
+            <button
+              type="submit"
+              disabled={isSubmitDisabled}
+              className="modal__submit"
+            >
               {buttonText}
             </button>
             {switchButton}

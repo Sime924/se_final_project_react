@@ -2,13 +2,26 @@ import { useState } from "react";
 import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
+// make error messaging for the register modal
+// create registration complete modal
+
 function RegisterModal({ isOpen, onClose, handleOnSwitchToLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!value) {
+      setEmailError("");
+    } else if (!emailRegex.test(value)) {
+      setEmailError("Invalid email address");
+    } else {
+      setEmailError("");
+    }
   };
 
   const handlePasswordChange = (e) => {
@@ -23,6 +36,9 @@ function RegisterModal({ isOpen, onClose, handleOnSwitchToLogin }) {
     e.preventDefault();
     handleSignin({ email, password, username });
   };
+
+  const isFormValid = Boolean(email && password && !emailError);
+
   return (
     <ModalWithForm
       title="Sign up"
@@ -30,6 +46,7 @@ function RegisterModal({ isOpen, onClose, handleOnSwitchToLogin }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleRegisterModalSubmit}
+      isSubmitDisabled={!isFormValid}
       switchButton={
         <button
           type="button"
