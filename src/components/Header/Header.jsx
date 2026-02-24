@@ -1,7 +1,20 @@
 import "./Header.css";
 import logo from "../../assets/logo.svg";
+import { useState } from "react";
 
-function Header({ handleOpenLoginModal }) {
+function Header({ handleOpenLoginModal, onSearch }) {
+  const [query, setQuery] = useState("");
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+    onSearch(query);
+  };
+
   return (
     <header className="header">
       <div className="header__container">
@@ -20,16 +33,19 @@ function Header({ handleOpenLoginModal }) {
           Find the latest news on any topic and save them in your personal
           account.
         </h3>
-        <form className="header__search-form">
+        <form className="header__search-form" onSubmit={handleSubmit}>
           <fieldset className="header__search-form_fieldset">
             <input
               name="search_form"
               type="text"
               className="header__input-form"
+              onChange={handleInputChange}
               required
               placeholder="Enter topic"
             />
-            <button className="header__search-btn">Search</button>
+            <button type="submit" className="header__search-btn">
+              Search
+            </button>
           </fieldset>
         </form>
       </div>

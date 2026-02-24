@@ -19,7 +19,7 @@ async function searchNews(query) {
   if (!response.ok) {
     throw new Error("Network response is not ok");
   }
-  return response.json;
+  return response.json();
 }
 
 export { searchNews };
