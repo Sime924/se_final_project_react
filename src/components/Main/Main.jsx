@@ -1,9 +1,53 @@
 import "./Main.css";
 import mainLogo from "../../assets/author-bio_img 2.jpeg";
 
-function Main() {
+function Main({
+  articles,
+  isSearching,
+  hasSearched,
+  searchError,
+  visibleCount,
+  onShowMore,
+}) {
+  const renderResults = () => {
+    if (!hasSearched) return null;
+
+    if (isSearching) {
+      return <p className="main__results-message">Loading...</p>;
+    }
+    if (searchError) {
+      return <p className="main__results-message">{searchError}</p>;
+    }
+    if (articles.length === 0) {
+      return <p className="main__results-message">Nothing Found</p>;
+    }
+    return (
+      <>
+        <div className="main__results-cards">
+          {articles.slice(0, visibleCount).map((article) => (
+            <div key={article.url} className="main__card">
+              <h3>{article.title}</h3>
+              <p>{article.description}</p>
+            </div>
+          ))}
+        </div>
+        {visibleCount < articles.length && (
+          <button type="button" onClick={onShowMore}>
+            show more
+          </button>
+        )}
+      </>
+    );
+  };
+
   return (
     <div className="main__content-container">
+      {hasSearched && (
+        <section className="main__results">
+          <h2 className="main__results-title">Search Results</h2>
+          {renderResults()}
+        </section>
+      )}
       <div className="main__content">
         <img className="main__bio-img" src={mainLogo} alt="bio pic" />
         <div className="main__author-content">

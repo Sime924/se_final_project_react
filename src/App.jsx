@@ -13,7 +13,9 @@ import RegistrationCompleteModal from "./components/RegistrationCompleteModal/Re
 function App() {
   const [articles, setArticles] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
   const [searchError, setSearchError] = useState("");
+  const [visibleCount, setVisibleCount] = useState(3);
 
   const [activeModal, setActiveModal] = useState("");
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -22,10 +24,11 @@ function App() {
     useState(false);
 
   const handleSearch = async (query) => {
+    setHasSearched(true);
+    setIsSearching(true);
+    setSearchError("");
+    setVisibleCount(3);
     try {
-      setIsSearching(true);
-      setSearchError("");
-
       const data = await searchNews(query);
       setArticles(data.articles || []);
     } catch (err) {
@@ -34,6 +37,10 @@ function App() {
     } finally {
       setIsSearching(false);
     }
+  };
+
+  const handleShowMore = () => {
+    setVisibleCount((prev) => prev + 3);
   };
 
   const handleOnSwitchToLogin = () => {
@@ -79,6 +86,9 @@ function App() {
                 articles={articles}
                 isSearching={isSearching}
                 searchError={searchError}
+                hasSearched={hasSearched}
+                visibleCount={visibleCount}
+                onShowMore={handleShowMore}
               />
             }
           />

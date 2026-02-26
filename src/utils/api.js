@@ -3,7 +3,7 @@ const newsApiBaseUrl =
     ? "https://nomoreparties.co/news/v2/everything"
     : "https://newsapi.org/v2/everything";
 
-const API_key = import.meta.env.REACT_APP_NEWS_API_KEY;
+const API_key = import.meta.env.VITE_NEWS_API_KEY;
 
 async function searchNews(query) {
   const today = new Date();
