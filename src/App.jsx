@@ -53,7 +53,7 @@ function App() {
   const handleOpenRegisterModal = () => {
     setShowRegisterModal(true);
   };
-
+  //registrationcompleted modal needs implementation once user is registered
   const handleOpenRegistrationCompleteModal = () => {
     setShowRegistrationCompleteModal(true);
   };

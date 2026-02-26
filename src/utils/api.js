@@ -1,9 +1,9 @@
 const newsApiBaseUrl =
-  process.env.Node_ENV === "production"
+  import.meta.env.Node_ENV === "production"
     ? "https://nomoreparties.co/news/v2/everything"
     : "https://newsapi.org/v2/everything";
 
-const API_key = process.env.REACT_APP_NEWS_API_KEY;
+const API_key = import.meta.env.REACT_APP_NEWS_API_KEY;
 
 async function searchNews(query) {
   const today = new Date();
