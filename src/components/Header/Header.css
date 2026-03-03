@@ -58,6 +58,10 @@ body {
   color: #ffffff;
 }
 
+.header__home-btn:hover {
+  cursor: pointer;
+}
+
 .header__home-btn::after {
   content: "";
   position: absolute;

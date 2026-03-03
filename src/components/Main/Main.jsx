@@ -1,5 +1,6 @@
 import "./Main.css";
 import mainLogo from "../../assets/author-bio_img 2.jpeg";
+import Newscard from "../NewsCard/NewsCard";
 
 function Main({
   articles,
@@ -25,10 +26,7 @@ function Main({
       <>
         <div className="main__results-cards">
           {articles.slice(0, visibleCount).map((article) => (
-            <div key={article.url} className="main__card">
-              <h3>{article.title}</h3>
-              <p>{article.description}</p>
-            </div>
+            <Newscard key={article.url} article={article} />
           ))}
         </div>
         {visibleCount < articles.length && (

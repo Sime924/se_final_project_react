@@ -10,7 +10,7 @@ body {
 }
 
 .footer {
-  /* max-width: 1440px; */
+  max-width: 1440px;
   height: 80px;
   width: 100%;
   margin: 0 auto;
