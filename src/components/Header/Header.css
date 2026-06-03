@@ -154,6 +154,12 @@ body {
   line-height: 24px;
 }
 
+.header__search-btn:hover {
+  cursor: pointer;
+  background-color: rgb(47, 113, 229, 0.9);
+  transition: 0.3s ease-in-out;
+}
+
 .header__input-form {
   border: none;
   border-radius: 100px;

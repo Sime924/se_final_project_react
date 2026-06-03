@@ -3,6 +3,9 @@ import "./NewsCard.css";
 function Newscard({ article }) {
   const { title, description, url, urlToImage, publishedAt, source } = article;
 
+  // style newsCards for the main page
+  //fix problem with footer overlapping
+
   const formattedDate = new Date(publishedAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
