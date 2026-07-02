@@ -1,0 +1,40 @@
+.news__card {
+  max-width: 400px;
+  max-height: 576px;
+}
+
+.news__card-image_container {
+  width: 400px;
+  height: 272px;
+  border-radius: 8px;
+}
+
+.news__card-image {
+  width: 400px;
+  height: 272px;
+  border-radius: 8px;
+}
+
+.news__card-save_btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.news__card-content {
+}
+
+.news__card-date {
+}
+
+.news__card-title {
+}
+
+.news__card-description {
+}
+
+.news__card-source {
+}
+
+.news__card-link {
+}
