@@ -13,7 +13,6 @@ body {
   width: 100%;
   margin: 0 auto;
   max-width: 1440px;
-  height: 624px;
   background-color: #ffff;
 }
 
@@ -40,4 +39,10 @@ body {
 .main__content-bio {
   width: 600px;
   height: 120px;
+}
+
+.main__results-cards {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }

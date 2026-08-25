@@ -30,7 +30,11 @@ function Main({
           ))}
         </div>
         {visibleCount < articles.length && (
-          <button type="button" onClick={onShowMore}>
+          <button
+            className="main__show_more-btn"
+            type="button"
+            onClick={onShowMore}
+          >
             show more
           </button>
         )}
